@@ -1,0 +1,15 @@
+.navigation-primary {
+  display: flex;
+  gap: 50px;
+  li {
+    list-style-type: none;
+    margin: auto;
+    a {
+      color: $color-primary;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

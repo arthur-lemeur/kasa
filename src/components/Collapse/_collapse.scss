@@ -1,0 +1,25 @@
+.collapse-wrapper {
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 5px;
+  background-color: #F6F6F6;
+
+  .collapse-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    color: white;
+    background-color: $color-primary;
+    border-radius: 5px;
+    height: 45px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .collapse-description {
+    color: #FF6060;
+    font-weight: 400;
+    padding: 2%;
+  }
+}
