@@ -1,3 +1,5 @@
+@use "../../styles/sass/abstracts/variables" as c;
+
 .card-container {
   max-width: 340px;
   min-width: 340px;
@@ -5,11 +7,16 @@
   border-radius: 10px;
   position: relative;
   flex: 1;
+  overflow: hidden;
+  transition: all 300ms ease;
+  &:hover {
+    scale: 1.05;
+  }
   img {
-    width: 100%;
-    height: 100%;
-    background-color: $color-primary;
+    @include c.colors;
+    background-color: c.$color-primary;
     border-radius: 10px;
+    height: 100%;
   }
   figcaption {
     position: absolute;
@@ -20,6 +27,10 @@
     border-radius: 10px;
     background: linear-gradient(transparent, 50%, #00000080);
     color: white;
+    &:hover {
+      @include c.bgcolors;
+      background: linear-gradient(transparent, 80%, c.$color-primary);
+    }
     p {
       position: absolute;
       left: 5%;

@@ -1,0 +1,23 @@
+@use "../../styles/sass/abstracts/variables" as c;
+
+
+.error-page-body {
+  text-align: center;
+  margin-top: 10%;
+  @include c.colors;
+  color: c.$color-primary;
+  h2 {
+    font-size: 290px;
+    font-weight: 700;
+    margin: 0;
+  }
+  p {
+    font-size: 36px;
+    margin-bottom: 10%;
+  }
+  a {
+    &:visited {
+      color: c.$color-primary;
+    }
+  }
+}

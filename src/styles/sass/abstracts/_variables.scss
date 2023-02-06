@@ -1,1 +1,12 @@
-$color-primary: #FF6060;
+$color-primary: rgb(255, 96, 96);
+$border-primary: 1px solid $color-primary;
+
+@mixin colors {
+  color: $color-primary
+}
+@mixin bgcolors {
+  background-color: $color-primary
+}
+@mixin bordercolors {
+  border: $border-primary
+}

@@ -1,9 +1,13 @@
 .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 120%;
   text-align: center;
   background-color: black;
-  margin: 0 -7%;
+  margin-right: -10%;
   margin-bottom: -3%;
-  padding: 2% 0;
+  padding: 1% 0;
   .App-logo, p {
     color: white;
   }

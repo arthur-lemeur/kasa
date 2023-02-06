@@ -1,23 +1,23 @@
-import Header from "../../components/Header/Header";
+import Layout from "../../layout/layout";
+
 import BannerAbout from "../../components/BannerAbout/BannerAbout";
 import Collapse from "../../components/Collapse/Collapse";
-import Collapses from "../../pages/About/Collapses.json";
-import Footer from "../../components/Footer/Footer";
+import Collapses from "../../utils/JSON/Collapses.json";
 
 
 function About() {
     return (
         <div className="App">
-            <Header/>
-            <BannerAbout/>
-            {Collapses.map((item) => (
-                <Collapse
-                key={item.id}
-                title={item.title}
-                description={item.description}
-                />
-            ))}
-            <Footer/>
+            <Layout>
+                <BannerAbout/>
+                {Collapses.map((item) => (
+                    <Collapse
+                    key={item.id}
+                    title={item.title}
+                    description={item.description}
+                    />
+                ))}
+            </Layout>
         </div>
     );
 }

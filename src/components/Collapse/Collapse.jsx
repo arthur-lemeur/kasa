@@ -1,4 +1,5 @@
 import {useState} from "react";
+import './_collapse.scss';
 import ChevronUp from '../../assets/chevrons/chevron-up.png';
 import ChevronDown from '../../assets/chevrons/chevron-down.png'
 

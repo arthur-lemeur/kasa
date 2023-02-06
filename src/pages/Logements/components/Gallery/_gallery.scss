@@ -1,0 +1,79 @@
+@use "../../../../styles/sass/abstracts/variables" as c;
+
+#banner {
+  position: relative;
+  height: 415px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .slide {
+    height: 415px;
+    width: 100%;
+    opacity: 0;
+    transition:  opacity 400ms ease;
+  }
+  .slide.active {
+    opacity: 1;
+    height: 415px;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+}
+
+/* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
+/* Gestion des fleches du carrousel */
+#banner .arrow {
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+}
+
+#banner .arrow:hover {
+  transform: scale(1.1);
+}
+
+#banner .arrow:active {
+  transform: scale(0.9);
+}
+
+#banner .arrow_left {
+  left: 10px;
+}
+#banner .arrow_right {
+  right: 10px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+}
+.dot {
+  @include c.bgcolors;
+  margin-inline: 5px;
+  width: 13px;
+  height: 13px;
+  background-color: #ffffff00;
+  border: 3px solid #fff;
+  border-radius: 100%;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);;
+  transition: all 200ms;
+  &:hover {
+    border: 3px solid c.$color-primary;
+    cursor: pointer;
+  }
+  &_selected {
+    background-color: c.$color-primary;
+    border: c.$color-primary;
+    &:hover {
+      border: 3px solid c.$color-primary !important;
+      cursor: default !important;
+    }
+  }
+}

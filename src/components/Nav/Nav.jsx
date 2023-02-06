@@ -1,4 +1,4 @@
-
+import './_navigation.scss';
 
 function Navigation() {
     return (
