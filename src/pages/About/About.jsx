@@ -2,15 +2,17 @@ import Layout from "../../layout/layout";
 
 import BannerAbout from "../../components/BannerAbout/BannerAbout";
 import Collapse from "../../components/Collapse/Collapse";
-import Collapses from "../../utils/JSON/Collapses.json";
+import {useFetch} from "../../utils/hooks/useFetch";
 
 
 function About() {
+
+    const [data] = useFetch('/JSON/Collapses.json')
     return (
         <div className="App">
             <Layout>
                 <BannerAbout/>
-                {Collapses.map((item) => (
+                {data.map((item) => (
                     <Collapse
                     key={item.id}
                     title={item.title}

@@ -12,7 +12,7 @@
     height: 415px;
     width: 100%;
     opacity: 0;
-    transition:  opacity 400ms ease;
+    transition: 1000ms ease-in-out;
   }
   .slide.active {
     opacity: 1;
@@ -25,13 +25,11 @@
     border-radius: 25px;
   }
 }
-
-/* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
-/* Gestion des fleches du carrousel */
 #banner .arrow {
   position: absolute;
   cursor: pointer;
   user-select: none;
+  z-index: 2;
 }
 
 #banner .arrow:hover {

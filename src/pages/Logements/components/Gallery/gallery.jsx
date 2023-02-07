@@ -2,10 +2,21 @@ import React, {useEffect, useState} from "react";
 import './_gallery.scss';
 import ArrowLeft from "../../../../assets/arrow_left.png";
 import ArrowRight from "../../../../assets/arrow_right.png";
-import {memo} from "react";
 
-const Gallery = memo(function Gallery({pictures}) {
+function Gallery({pictures}) {
+
     useEffect(() => {
+        let i = 0;
+        let photo = pictures[i];
+        let slide = document.querySelector(".slide");
+
+        const dots = document.querySelector(".dots");
+
+        const arrowleft = document.querySelector(".arrow_left");
+        const arrowright = document.querySelector(".arrow_right");
+
+
+
         const initialisationGallery = () => {
             const image = document.createElement("img");
             image.classList.add("image");
@@ -17,14 +28,12 @@ const Gallery = memo(function Gallery({pictures}) {
             slide.classList.add("active");
         }
 
-        let i = 0;
-        let photo = pictures[i];
 
-        if (pictures.length > 1) {
+        function multipleImagesGallery() {
+            initialisationGallery();
             for (let i = 0; i < pictures.length; i++) {
                 const dotElement = document.createElement("span");
                 dotElement.classList.add("dot");
-                const dots = document.querySelector(".dots");
                 dots.appendChild(dotElement);
             }
 
@@ -37,14 +46,8 @@ const Gallery = memo(function Gallery({pictures}) {
                 dot[i].classList.add("dot_selected");
             }
 
-            initialisationGallery();
-
-            const arrowleft = document.querySelector(".arrow_left");
-            const arrowright = document.querySelector(".arrow_right");
-
-            arrowright.addEventListener('click', function() {
+            const nextSlide = () => {
                 dot[i].classList.remove("dot_selected");
-                let slide = document.querySelector(".slide")
                 slide.classList.remove("active");
                 setTimeout(() => {
                     if (i < (pictures.length - 1)) {
@@ -55,13 +58,11 @@ const Gallery = memo(function Gallery({pictures}) {
                     photo = pictures[i];
                     slider(photo, i);
                     slide.classList.add("active");
-                }, 700)
-            })
+                    }, 1000)
+            }
 
-
-            arrowleft.addEventListener('click', function() {
+            function prevSlide() {
                 dot[i].classList.remove("dot_selected");
-                let slide = document.querySelector(".slide")
                 slide.classList.remove("active");
                 setTimeout(() => {
                     if (i > 0) {
@@ -72,8 +73,32 @@ const Gallery = memo(function Gallery({pictures}) {
                     photo = pictures[i];
                     slider(photo, i);
                     slide.classList.add("active");
-                }, 400)
-            })
+                    }, 1000)
+            }
+
+            setInterval( () => {
+                dot[i].classList.remove("dot_selected");
+                slide.classList.remove("active");
+                setTimeout(() => {
+                    if (i < (pictures.length - 1)) {
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                    photo = pictures[i];
+                    slider(photo, i);
+                    slide.classList.add("active");
+                    }, 1000)
+            }, 14000)
+
+
+            arrowleft.addEventListener('click', () => {
+                prevSlide()
+            });
+
+            arrowright.addEventListener('click', () => {
+                nextSlide()
+            });
 
 
             let dotsArray = document.querySelectorAll(".dot");
@@ -81,31 +106,37 @@ const Gallery = memo(function Gallery({pictures}) {
             dotsArray.forEach((item, n) => {
                 item.addEventListener('click', function () {
                     dot[i].classList.remove("dot_selected");
-                    let slide = document.querySelector(".slide")
                     slide.classList.remove("active");
                     setTimeout(() => {
                         i = n;
                         photo = pictures[i];
                         slider(photo, i);
                         slide.classList.add("active");
-                    }, 700)
-                })
-            });
-
-        } else {
-            initialisationGallery();
+                    }, 1000)
+                });
+            })
         }
-    }, )
+
+        function init() {
+            if (pictures.length > 1) {
+                multipleImagesGallery();
+            } else {
+                initialisationGallery();
+            }
+        }
+
+        init();
+    },)
 
     return(
         <div id="banner">
             <img src={ArrowLeft} className="arrow arrow_left" alt="précédent" />
-            <img src={ArrowRight} className="arrow arrow_right" alt="suivant"/>
+            <img src={ArrowRight} className="arrow arrow_right" alt="suivant" />
 
             <div className='slide'></div>
             <div className="dots"></div>
         </div>
     )
-});
+}
 
 export default Gallery;
