@@ -4,6 +4,7 @@ import Layout from "../../layout/layout";
 
 
 function Home() {
+
   return (
     <div className="App">
         <Layout>
