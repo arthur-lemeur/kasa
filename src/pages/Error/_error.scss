@@ -1,19 +1,30 @@
 @use "../../styles/sass/abstracts/variables" as c;
+@use "../../styles/sass/abstracts/responsive" as r;
 
 
 .error-page-body {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 20%;
   @include c.colors;
   color: c.$color-primary;
+  @include r.breakpoint-mobile {
+    margin-top: 45%;
+  }
   h2 {
     font-size: 290px;
     font-weight: 700;
     margin: 0;
+    @include r.breakpoint-mobile {
+      font-size: 150px;
+    }
   }
   p {
     font-size: 36px;
     margin-bottom: 10%;
+    @include r.breakpoint-mobile {
+      font-size: 24px;
+      margin-bottom: 20%;
+    }
   }
   a {
     &:visited {

@@ -1,3 +1,5 @@
+@use "../../styles/sass/abstracts/responsive" as r;
+
 .cards-wrapper {
   background-color: #F6F6F6;
   width: 100%;
@@ -6,4 +8,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  @include r.breakpoint-mobile {
+    background-color: transparent;
+  }
 }

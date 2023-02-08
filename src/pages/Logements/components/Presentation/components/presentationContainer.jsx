@@ -3,9 +3,11 @@ function TitleAndLocation({title, location, tags}) {
         <div>
             <h2>{title}</h2>
             <p>{location}</p>
-            {tags.map((tag) => (
-                <button key={tag}>{tag}</button>
-            ))}
+            <div className="tags">
+                {tags.map((tag) => (
+                    <button key={tag}>{tag}</button>
+                ))}
+            </div>
         </div>
     )
 }

@@ -1,4 +1,6 @@
 @use "../../styles/sass/abstracts/variables" as c;
+@use "../../styles/sass/abstracts/responsive" as r;
+
 
 .navigation-primary {
   display: flex;
@@ -10,6 +12,10 @@
       @include c.colors;
       color: c.$color-primary;
       text-decoration: none;
+      @include r.breakpoint-mobile {
+        font-size: 14px;
+        text-transform: uppercase;
+      }
       &:hover {
         text-decoration: underline;
       }

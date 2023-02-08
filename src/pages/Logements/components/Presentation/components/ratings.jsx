@@ -1,24 +1,27 @@
-import Star from "../../../../../assets/Vector.svg";
+import {StarRed, StarEmpty} from "./star";
 
-function Ratings() {
+function Ratings({rating}) {
+    const stars = parseInt(rating)
+    const arr = Array(stars)
+    arr.fill('x')
+    const arr2 = Array(5 - stars);
+    arr2.fill('x')
+
+
     return(
-        <div /*TODO*/>
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3" className="star-colored"/>
-            </svg>
+        <div className="stars">
+            {arr.map((r) => (
+                <StarRed
+                    key={Math.floor(Math.random() * 1000)}
+                />
+            )
+            )}
+            {arr2.map((s) => (
+                <StarEmpty
+                    key={Math.floor(Math.random() * 1000)}
+                />
+            ))}
 
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3" className="star-colored"/>
-            </svg>
-
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3" className="star-colored"/>
-            </svg>
-
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.645 12L15 0L11.355 12H0L9.27 18.615L5.745 30L15 22.965L24.27 30L20.745 18.615L30 12H18.645Z" fill="#E3E3E3" className="star-colored"/>
-            </svg>
-            <img src={Star}/>
         </div>
     )
 }

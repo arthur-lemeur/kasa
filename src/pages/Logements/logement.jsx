@@ -33,6 +33,7 @@ function Logement() {
                         tags={(lodging.tags)}
                         hostname={(lodging.host.name)}
                         hostpicture={(lodging.host.picture)}
+                        rating={lodging.rating}
                         />
                         <DetailsContainer
                         description={(lodging.description)}
