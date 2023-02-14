@@ -1,0 +1,15 @@
+@use "../../../styles/sass/abstracts/responsive" as r;
+
+.details-container {
+  display: flex;
+  gap: 50px;
+  font-weight: 400;
+  @include r.breakpoint-mobile {
+    width: 100%;
+    flex-direction: column;
+    gap: 5px;
+  }
+  li {
+    list-style-type: none;
+  }
+}

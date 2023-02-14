@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import './_card.scss';
+import Error from "../../pages/Error/Error";
 
 function Card(props) {
 
@@ -27,7 +28,7 @@ function Card(props) {
         })
     })
     return (
-        <Link to={"logement/" + logement.id} className="reveal card-link">
+        <Link to={"logement/" + logement.id} className="reveal card-link" state={{ logement }}>
             <figure className="card-container" id={logement.id} data-spy>
                 <img src={logement.cover} alt={logement.title}/>
                 <figcaption><p>{logement.title}</p></figcaption>

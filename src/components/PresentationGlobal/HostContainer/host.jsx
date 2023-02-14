@@ -1,3 +1,5 @@
+import './_host.scss';
+
 function Host({hostpicture, hostname}) {
     return(
         <div className="host">

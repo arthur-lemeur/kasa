@@ -1,13 +1,27 @@
 @use "../../styles/sass/abstracts/responsive" as r;
+@use "../../styles/sass/abstracts/variables" as c;
 
 .header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  img {
-    @include r.breakpoint-mobile {
-      width: 145px;
-      height: 47px;
+  .logo {
+    @include c.colors;
+    display: flex;
+    align-items: center;
+    color: c.$color-primary;
+    gap: 5px;
+    text-decoration: none;
+    h1 {
+      font-weight: 500;
+      font-size: 60px;
     }
+    img {
+      @include r.breakpoint-mobile {
+        width: 145px;
+        height: 47px;
+      }
+    }
+
   }
 }

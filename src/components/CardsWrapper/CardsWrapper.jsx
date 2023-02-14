@@ -1,12 +1,13 @@
 import Card from "../Card/Card";
 import './_cardswrapper.scss';
-import '../../utils/hooks/useFetch';
-import {useFetch} from "../../utils/hooks/useFetch";
+import '../../utils/hooks/useFetchLogements';
+import {useFetchLogements} from "../../utils/hooks/useFetchLogements";
 
 
 function CardsWrapper() {
 
-    const [data] = useFetch('/JSON/logements.json')
+    const [data] = useFetchLogements()
+
     return (
         <div className="cards-wrapper">
            {data.map((item, index) => (

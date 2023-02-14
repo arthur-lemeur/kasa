@@ -19,7 +19,10 @@ root.render(
               <Route exact path="/" element={<Home/>}/>
               <Route path="/about" element={<About/>}/>
               <Route path="*" element={<Error/>}/>
-              <Route path="/logement/:id" element={<Logement/>}/>
+              <Route
+                  path="/logement/:id"
+                  element={<Logement/>}
+              />;
           </Routes>
       </Router>
 );

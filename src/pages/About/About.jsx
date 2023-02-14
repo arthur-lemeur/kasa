@@ -1,13 +1,13 @@
 import Layout from "../../layout/layout";
 
-import BannerAbout from "../../components/BannerAbout/BannerAbout";
+import BannerAbout from "../../components/Banners/BannerAbout/BannerAbout";
 import Collapse from "../../components/Collapse/Collapse";
-import {useFetch} from "../../utils/hooks/useFetch";
+import {useFetchCollapses} from "../../utils/hooks/useFetchAbout";
 
 
 function About() {
 
-    const [data] = useFetch('/JSON/Collapses.json')
+    const [data] = useFetchCollapses()
     return (
         <div className="App">
             <Layout>

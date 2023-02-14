@@ -1,0 +1,51 @@
+@use "../../styles/sass/abstracts/variables" as c;
+@use "../../styles/sass/abstracts/responsive" as r;
+
+.presentation-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  @include c.colors;
+  color: c.$color-primary;
+  @include r.breakpoint-mobile {
+    display: block;
+  }
+  .tags {
+    display: flex;
+  }
+
+  button {
+    color: white;
+    @include c.bgcolors;
+    background-color: c.$color-primary;
+    border: 1px solid transparent;
+    padding: 1% 2%;
+    border-radius: 15px;
+    margin-right: 10px;
+    &:hover {
+      @include c.bordercolors;
+      border: c.$border-primary;
+      color: c.$color-primary;
+      background-color: white;
+      cursor: pointer;
+    }
+  }
+  .host-rating-container {
+    .stars img {
+      height: 20px;
+    }
+    @include r.breakpoint-mobile {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.pictures-container {
+  width: 100%;
+  display: grid;
+}

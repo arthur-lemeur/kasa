@@ -1,4 +1,5 @@
-import Collapse from "../../../../components/Collapse/Collapse";
+import Collapse from "../../Collapse/Collapse";
+import './details-container.scss';
 
 function DetailsContainer({description, equipements}) {
     return (

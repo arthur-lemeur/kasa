@@ -1,4 +1,4 @@
-import BannerHome from "../../components/BannerHome/BannerHome";
+import BannerHome from "../../components/Banners/BannerHome/BannerHome";
 import CardsWrapper from "../../components/CardsWrapper/CardsWrapper";
 import Layout from "../../layout/layout";
 

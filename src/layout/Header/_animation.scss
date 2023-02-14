@@ -1,0 +1,163 @@
+@use "../../styles/sass/abstracts/responsive" as r;
+@use "../../styles/sass/abstracts/variables" as c;
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  .logo {
+    @include c.colors;
+    display: flex;
+    align-items: center;
+    color: c.$color-primary;
+    gap: 5px;
+    text-decoration: none;
+    h1 {
+      font-weight: 500;
+      font-size: 60px;
+    }
+    img {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      opacity: 1;
+      width: 45px;
+      height: 50px;
+      animation: 10s drop infinite ease-out;
+      @include r.breakpoint-mobile {
+        width: 145px;
+        height: 47px;
+      }
+    }
+
+    .part1 {
+      scale: 1;
+      animation: 10s squeezeK infinite ease-out;
+    }
+
+    .part2 {
+      scale: 1;
+      position: absolute;
+      top: 0;
+      left: 40px;
+      animation: 10s pushPart2 ease-out infinite;
+    }
+
+    .part3 {
+      scale: 1;
+      position: absolute;
+      top: 0;
+      left: 80px;
+      animation: 10s pushPart3 ease-out infinite;
+      animation-delay: 0.3s;
+    }
+  }
+
+
+  @keyframes drop {
+    0% {
+      top: -1000px;
+      left: -20px;
+      width: 45px;
+    }
+    7% {
+      top: 0;
+      left: 0;
+    }
+    10% {
+      top: -20px;
+      left: 15px;
+    }
+    15% {
+      top: 0;
+      left: 30px;
+    }
+    40% {
+      top: 50px;
+      left: 50px;
+      width: 45px;
+    }
+    75% {
+      width: 0px;
+    }
+    100% {
+      width: 0;
+    }
+  }
+
+  @keyframes pushPart2 {
+    0% {
+      top: 0;
+      left: 40px;
+      scale: 1;
+    }
+    15% {
+      top: 0;
+      left: 40px;
+      scale: 1;
+    }
+    17% {
+      scale: 0.8;
+    }
+    40% {
+      top: 0;
+      left: 90px;
+    }
+    85% {
+      top: 0;
+      left: 40px;
+      scale: 1;
+    }
+    100% {
+      top: 0;
+      left: 40px;
+      scale: 1;
+    }
+  }
+
+  @keyframes pushPart3 {
+    0% {
+      top: 0;
+      left: 80px;
+    }
+    15% {
+      top: 0;
+      left: 80px;
+      scale: 1;
+    }
+    17% {
+      scale: 0.9;
+    }
+    30% {
+      top: 0;
+      left: 140px;
+    }
+    70% {
+      left: 80px;
+      scale: 1;
+    }
+    100% {
+      top: 0;
+      left: 80px;
+    }
+  }
+
+  @keyframes squeezeK {
+    0% {
+      scale: 1;
+    }
+    7% {
+      scale: 1;
+    }
+    8% {
+      scale: 0.6;
+    }
+    60% {
+      scale: 1;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+}

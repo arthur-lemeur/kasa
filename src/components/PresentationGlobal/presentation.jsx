@@ -1,8 +1,8 @@
 import './_presentation.scss';
-import Ratings from "./components/ratings";
-import Host from "./components/host";
-import TitleAndLocation from "./components/presentationContainer";
-import ratings from "./components/ratings";
+import Ratings from "./Ratings/ratings";
+import Host from "./HostContainer/host";
+import TitleAndLocation from "./PresentationContainer/presentationContainer";
+import ratings from "./Ratings/ratings";
 
 function PresentationLogement({title, location, tags, hostname, hostpicture, rating}) {
     return (

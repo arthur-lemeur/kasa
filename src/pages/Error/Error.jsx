@@ -1,4 +1,3 @@
-import Header from "../../layout/Header/Header";
 import './_error.scss';
 import Layout from "../../layout/layout";
 

@@ -26,7 +26,7 @@
       @include c.bordercolors;
       cursor: pointer;
       border: 1px solid c.$border-primary;
-      box-shadow: 5px 10px 10px c.$color-primary;
+      box-shadow: 0 5px 5px c.$color-primary;
       background-color: #fd9e9e;
 
     }
