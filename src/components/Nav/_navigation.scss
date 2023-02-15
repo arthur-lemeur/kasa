@@ -18,7 +18,12 @@
       }
       &:hover {
         text-decoration: underline;
+        color: c.$color-primary;
       }
     }
   }
+}
+#accueil,
+#about {
+  color: c.$color-primary;
 }

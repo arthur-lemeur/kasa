@@ -4,13 +4,14 @@ import {useEffect, useState} from "react";
 function CreateDots(props) {
     let index = props.currentPicture;
     const length = props.length;
+    const setCurrentPicture = props.setCurrentPicture
 
 
     function Dots() {
         let dots = [];
         function handleClick(element) {
             const elementId = element.target.id
-            console.log(elementId)
+            setCurrentPicture(elementId);
 
         }
         for (let i = 0; i < length; i++) {

@@ -1,6 +1,6 @@
 function TitleAndLocation({title, location, tags}) {
     return(
-        <div>
+        <div className="title-and-location">
             <h2>{title}</h2>
             <p>{location}</p>
             <div className="tags">

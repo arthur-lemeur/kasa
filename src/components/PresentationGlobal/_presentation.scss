@@ -7,6 +7,9 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
+  .title-and-location {
+    width: 100%;
+  }
   @include c.colors;
   color: c.$color-primary;
   @include r.breakpoint-mobile {
@@ -14,6 +17,8 @@
   }
   .tags {
     display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
   }
 
   button {
@@ -21,7 +26,7 @@
     @include c.bgcolors;
     background-color: c.$color-primary;
     border: 1px solid transparent;
-    padding: 1% 2%;
+    padding: 5px 10px;
     border-radius: 15px;
     margin-right: 10px;
     &:hover {

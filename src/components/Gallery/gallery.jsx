@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './_gallery.scss';
 import ArrowLeft from "../../assets/arrow_left.png";
 import ArrowRight from "../../assets/arrow_right.png";
@@ -19,19 +19,34 @@ function Gallery({pictures}) {
         setCurrentPicture(currentIndex >= length ? 0 : currentIndex);
     };
 
-    return (
-        <div id="banner">
-            <img src={ArrowLeft} className="arrow arrow_left" alt="précédent" onClick={handlePrevious}/>
-            <img src={ArrowRight} className="arrow arrow_right" alt="suivant" onClick={handleNext}/>
+    const multipleImages = length > 1;
 
-            <div className='slide active'>
-                <img src={pictures[currentPicture]} alt="gallerie photo" className="image"/>
-            </div>
-            <CreateDots
-                currentPicture={currentPicture}
-                length={length}
-                />
-        </div>
+    return (
+        <React.Fragment>
+            {multipleImages ? (
+                <div id="banner">
+                        <img src={ArrowLeft} className="arrow arrow_left" alt="précédent" onClick={handlePrevious} />
+
+                        <img src={ArrowRight} className="arrow arrow_right" alt="suivant" onClick={handleNext} />
+
+                        <div className='slide active'>
+                            <img src={pictures[currentPicture]} alt="photos du logement" className="image"/>
+                        </div>
+
+                        <CreateDots
+                            setCurrentPicture={setCurrentPicture}
+                            length={length}
+                            currentPicture={currentPicture}
+                        />
+                </div>
+            ) : (
+                <div id="banner">
+                    <div className='slide active'>
+                        <img src={pictures[currentPicture]} alt="photo du logement" className="image"/>
+                    </div>
+                </div>
+            )}
+        </React.Fragment>
     )
 }
 
