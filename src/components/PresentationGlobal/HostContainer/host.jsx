@@ -4,7 +4,7 @@ function Host({hostpicture, hostname}) {
     return(
         <div className="host">
             <p>{hostname}</p>
-            <img src={hostpicture} alt="Host Picture"/>
+            <img src={hostpicture} alt="Hôte"/>
         </div>
     )
 }

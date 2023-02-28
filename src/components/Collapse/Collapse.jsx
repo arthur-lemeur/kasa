@@ -17,8 +17,8 @@ function Collapse({title, description}) {
             </h3>
             <div>
                 {isOpen ?
-                    <img src={ChevronUp}/>
-                    : <img src={ChevronDown}/> }
+                    <img src={ChevronUp} alt="fermer le bloc"/>
+                    : <img src={ChevronDown} alt="ouvrir le bloc"/> }
             </div>
         </div>
         {isOpen ?

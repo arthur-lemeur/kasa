@@ -1,4 +1,8 @@
-function TitleAndLocation({title, location, tags}) {
+function TitleAndLocation(props) {
+    const title = props.title;
+    const location = props.location;
+    const tags = props.tags;
+
     return(
         <div className="title-and-location">
             <h2>{title}</h2>

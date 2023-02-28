@@ -2,9 +2,15 @@ import './_presentation.scss';
 import Ratings from "./Ratings/ratings";
 import Host from "./HostContainer/host";
 import TitleAndLocation from "./PresentationContainer/presentationContainer";
-import ratings from "./Ratings/ratings";
 
-function PresentationLogement({title, location, tags, hostname, hostpicture, rating}) {
+function PresentationLogement(props) {
+    const title = props.title;
+    const tags = props.tags;
+    const location = props.location;
+    const hostname = props.hostname;
+    const hostpicture = props.hostpicture;
+    const rating = props.rating;
+
     return (
         <div>
             <div className="presentation-container">

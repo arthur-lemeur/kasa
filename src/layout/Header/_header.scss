@@ -12,14 +12,11 @@
     color: c.$color-primary;
     gap: 5px;
     text-decoration: none;
-    h1 {
-      font-weight: 500;
-      font-size: 60px;
-    }
+
     img {
       @include r.breakpoint-mobile {
-        width: 145px;
-        height: 47px;
+        width: 130px;
+        height: 40px;
       }
     }
 

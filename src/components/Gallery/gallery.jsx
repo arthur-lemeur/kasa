@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import './_gallery.scss';
 import ArrowLeft from "../../assets/arrow_left.png";
 import ArrowRight from "../../assets/arrow_right.png";
@@ -42,7 +42,7 @@ function Gallery({pictures}) {
             ) : (
                 <div id="banner">
                     <div className='slide active'>
-                        <img src={pictures[currentPicture]} alt="photo du logement" className="image"/>
+                        <img src={pictures[currentPicture]} alt="logement" className="image"/>
                     </div>
                 </div>
             )}

@@ -5,6 +5,7 @@
 .navigation-primary {
   display: flex;
   gap: 50px;
+  flex-wrap: nowrap;
   li {
     list-style-type: none;
     margin: auto;
@@ -13,7 +14,7 @@
       color: c.$color-primary;
       text-decoration: none;
       @include r.breakpoint-mobile {
-        font-size: 14px;
+        font-size: 12px;
         text-transform: uppercase;
       }
       &:hover {
@@ -22,8 +23,12 @@
       }
     }
   }
-}
-#accueil,
-#about {
-  color: c.$color-primary;
+  #accueil,
+  #about {
+    color: c.$color-primary;
+  }
+  @include r.breakpoint-mobile {
+    gap: 10px;
+    padding-inline-start: 10px;
+  }
 }

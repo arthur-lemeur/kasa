@@ -5,7 +5,7 @@ function BannerHome() {
     return (
         <figure className="banner-homepage">
             <img src={Banner} alt="BannerHome Homepage"/>
-            <figcaption>Chez vous, partout et ailleurs</figcaption>
+            <figcaption>Chez vous,<span><br/></span> partout et ailleurs</figcaption>
         </figure>
     )
 }

@@ -4,7 +4,7 @@ export function useFetchCollapses() {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        const url =  "/JSON/Collapses.json"
+        const url =  "JSON/Collapses.json"
 
         const fetchData = async() => {
             try {

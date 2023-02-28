@@ -1,11 +1,10 @@
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import './_card.scss';
-import Error from "../../pages/Error/Error";
 
 function Card(props) {
 
-    const [logement, setLogement] = useState(props.logement);
+    const [logement] = useState(props.logement);
 
     useEffect(() => {
         const ratio = 0.5
@@ -28,7 +27,7 @@ function Card(props) {
         })
     })
     return (
-        <Link to={"logement/" + logement.id} className="reveal card-link" state={{ logement }}>
+        <Link to={"logement/" + logement.id} className="reveal card-link">
             <figure className="card-container" id={logement.id} data-spy>
                 <img src={logement.cover} alt={logement.title}/>
                 <figcaption><p>{logement.title}</p></figcaption>
