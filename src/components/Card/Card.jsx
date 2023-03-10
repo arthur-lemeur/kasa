@@ -28,7 +28,7 @@ function Card(props) {
     })
     return (
         <Link to={"logement/" + logement.id} className="reveal card-link">
-            <figure className="card-container" id={logement.id} data-spy>
+            <figure className="card-container" id={logement.id}>
                 <img src={logement.cover} alt={logement.title}/>
                 <figcaption><p>{logement.title}</p></figcaption>
             </figure>

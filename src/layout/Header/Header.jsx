@@ -5,9 +5,9 @@ import './_header.scss';
 function Header() {
     return (
         <div className="header">
-        <a href="/" className="logo">
-            <img src={logo} className="App-logo" alt="logo" />
-        </a>
+            <a href="/" className="logo">
+                <img src={logo} className="App-logo" alt="logo" />
+            </a>
             <Navigation/>
         </div>
     )
