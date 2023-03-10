@@ -1,6 +1,6 @@
 import Layout from "../../layout/layout";
 
-import Banner from "../../components/Banners/Banner";
+import Banner from "../../components/Banner/Banner";
 import BannerAbout  from "../../assets/banner-about.jpg"
 import Collapse from "../../components/Collapse/Collapse";
 import {useFetchCollapses} from "../../utils/hooks/useFetchAbout";

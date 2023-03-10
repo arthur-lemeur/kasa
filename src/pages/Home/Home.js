@@ -1,4 +1,4 @@
-import Banner from "../../components/Banners/Banner";
+import Banner from "../../components/Banner/Banner";
 import BannerHome  from "../../assets/banner-home.jpg"
 import CardsWrapper from "../../components/CardsWrapper/CardsWrapper";
 import Layout from "../../layout/layout";
