@@ -5,11 +5,15 @@
   width: 100%;
   height: 100%;
   border-radius: 25px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   gap: 1px;
   @include r.breakpoint-mobile {
     background-color: transparent;
+  }
+  @include r.breakpoint-tablet {
+    display: flex;
+    flex-wrap: wrap;
   }
 }

@@ -1,6 +1,7 @@
 import Layout from "../../layout/layout";
 
-import BannerAbout from "../../components/Banners/BannerAbout/BannerAbout";
+import Banner from "../../components/Banners/Banner";
+import BannerAbout  from "../../assets/banner-about.jpg"
 import Collapse from "../../components/Collapse/Collapse";
 import {useFetchCollapses} from "../../utils/hooks/useFetchAbout";
 
@@ -11,7 +12,8 @@ function About() {
     return (
         <div className="App">
             <Layout>
-                <BannerAbout/>
+                <Banner
+                banner={BannerAbout}/>
                 {data.map((item) => (
                     <Collapse
                     key={item.id}

@@ -1,6 +1,8 @@
-import BannerHome from "../../components/Banners/BannerHome/BannerHome";
+import Banner from "../../components/Banners/Banner";
+import BannerHome  from "../../assets/banner-home.jpg"
 import CardsWrapper from "../../components/CardsWrapper/CardsWrapper";
 import Layout from "../../layout/layout";
+import {Fragment} from "react";
 
 
 function Home() {
@@ -8,7 +10,9 @@ function Home() {
   return (
     <div className="App">
         <Layout>
-            <BannerHome/>
+            <Banner
+            banner={BannerHome}
+            caption={<Fragment>Chez vous,<span><br/></span> partout et ailleurs</Fragment>}/>
             <CardsWrapper/>
         </Layout>
     </div>
